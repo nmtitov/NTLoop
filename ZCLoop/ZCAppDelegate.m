@@ -7,17 +7,27 @@
 //
 
 #import "ZCAppDelegate.h"
+#import "ZCLoop.h"
+
+@interface ZCAppDelegate()
+@property (strong, nonatomic) ZCLoop *loop;
+@end
 
 @implementation ZCAppDelegate
 
-@synthesize window = _window;
+@synthesize loop;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    NSArray *hello = [NSArray arrayWithObjects:@"Salaam aleihum", @"Tungjatjeta", @"Hello", @"Ahlen", @"Marhaba", @"Voghdzuyin", @"Shlama", @"Goeie dag", @"Kheyerle irte", @"Прывитанне", @"Nomoskaar", @"Zdraveite", @"Zdravo", @"Aloha", @"Hallo", @"Geia sou", @"Gamardjobat", @"God dag", @"Shalom", @"Iiti", @"Sawubona", @"Salam", @"Selamat", @"Godan daginn", @"Buenos dias", @"Buon giorno", @"Salam", @"Mendvt", @"Assalomu alaikum", @"Terveh", @"Salaam matszbe", @"Mauri", @"Haa", @"Annyoung hasimnikka", @"Mej", nil];
+    
+    // 1 means 60 iterations per second, 2 means 30, 3 - 20 and so on.
+    self.loop = [[ZCLoop alloc] initWithFrameInterval:1 usingBlock:^(NSTimeInterval timeSinceLastUpdate) {
+        NSUInteger index = arc4random() % hello.count;
+        NSString *phrase = [hello objectAtIndex:index];
+        NSLog(@"After %f: %@", timeSinceLastUpdate, phrase);
+    }];
+    
     return YES;
 }
 
