@@ -56,8 +56,8 @@
     if (paused == NO) {
         self.timeSinceLastResume = 0;
     }
-    if ([self.delegate respondsToSelector:@selector(trLoop:willPause:)]) {
-        [self.delegate trLoop:self willPause:paused];
+    if ([self.delegate respondsToSelector:@selector(zcLoop:willPause:)]) {
+        [self.delegate zcLoop:self willPause:paused];
     }
     paused_ = paused;
 }
@@ -141,8 +141,8 @@
         NSTimeInterval dt = [self timeSinceLastUpdate];
         self.timeSinceFirstResume += dt;
         self.timeSinceLastResume += dt;
-        if ([self.delegate respondsToSelector:@selector(trLoopUpdate:)]) {
-            [self.delegate trLoopUpdate:self];
+        if ([self.delegate respondsToSelector:@selector(zcLoopUpdate:)]) {
+            [self.delegate zcLoopUpdate:self];
         }
         else {
             self.updateBlock(dt);
