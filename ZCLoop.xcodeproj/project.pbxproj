@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112B60A214FCC7D400E6A817 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 112B60A114FCC7D400E6A817 /* README.markdown */; };
 		11DB1FD614E40D8C009100E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11DB1FD514E40D8C009100E0 /* UIKit.framework */; };
 		11DB1FD814E40D8C009100E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11DB1FD714E40D8C009100E0 /* Foundation.framework */; };
 		11DB1FDA14E40D8C009100E0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11DB1FD914E40D8C009100E0 /* CoreGraphics.framework */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		112B60A114FCC7D400E6A817 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		11DB1FD114E40D8B009100E0 /* ZCLoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZCLoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11DB1FD514E40D8C009100E0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		11DB1FD714E40D8C009100E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -51,6 +53,7 @@
 		11DB1FC614E40D8B009100E0 = {
 			isa = PBXGroup;
 			children = (
+				112B60A114FCC7D400E6A817 /* README.markdown */,
 				11DB1FDB14E40D8C009100E0 /* ZCLoop */,
 				11DB1FD414E40D8B009100E0 /* Frameworks */,
 				11DB1FD214E40D8B009100E0 /* Products */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11DB1FE014E40D8C009100E0 /* InfoPlist.strings in Resources */,
+				112B60A214FCC7D400E6A817 /* README.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +271,7 @@
 				11DB1FEB14E40D8C009100E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
