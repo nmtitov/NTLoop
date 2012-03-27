@@ -15,8 +15,8 @@ You can set a delegate or configure other properties on the view controller, suc
 When active, loop automatically updates application data using time interval since last update.
 The view controller calls its delegate’s ntLoopUpdate: method. If you use delegate then your delegate should update data that does not involve rendering the results to the screen.
 
-Installation
-============
+Simple installation
+===================
 
 1. Clone repository
 2. Drag files to your project and choose option "Copy items into destination group's folder (if needed)"
