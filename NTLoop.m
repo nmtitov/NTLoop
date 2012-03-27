@@ -1,15 +1,15 @@
 //
-//  ZCLoop.m
-//  ZCLoop
+//  NTLoop.m
+//  NTLoop
 //
 //  Created by Nikita Titov on 11/24/11.
 //  Copyright (c) 2011 nikita@zencode.ru. All rights reserved.
 //
 
-#import "ZCLoop.h"
+#import "NTLoop.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface ZCLoop()
+@interface NTLoop()
 
 @property (readwrite, nonatomic) BOOL framesDisplayed;
 @property (readwrite, copy, nonatomic) UpdateBlock updateBlock;
@@ -32,7 +32,7 @@
 @end
 
 
-@implementation ZCLoop
+@implementation NTLoop
 
 @synthesize 
     delegate,
@@ -56,8 +56,8 @@
     if (paused == NO) {
         self.timeSinceLastResume = 0;
     }
-    if ([self.delegate respondsToSelector:@selector(zcLoop:willPause:)]) {
-        [self.delegate zcLoop:self willPause:paused];
+    if ([self.delegate respondsToSelector:@selector(ntLoop:willPause:)]) {
+        [self.delegate ntLoop:self willPause:paused];
     }
     paused_ = paused;
 }
@@ -141,8 +141,8 @@
         NSTimeInterval dt = [self timeSinceLastUpdate];
         self.timeSinceFirstResume += dt;
         self.timeSinceLastResume += dt;
-        if ([self.delegate respondsToSelector:@selector(zcLoopUpdate:)]) {
-            [self.delegate zcLoopUpdate:self];
+        if ([self.delegate respondsToSelector:@selector(ntLoopUpdate:)]) {
+            [self.delegate ntLoopUpdate:self];
         }
         else {
             self.updateBlock(dt);
