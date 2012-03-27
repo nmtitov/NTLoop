@@ -23,6 +23,19 @@ Simple installation
 3. Link against QuartzCore framework (Click on your project at navigator panel, choose your build target, go to "Build Phases" tab, then "Link binary with libraries" and add "QuartzCore.framework")
 4. Import `NTLoop.h` header to your project and build!
 
+Advanced installation
+=====================
+
+It's better to install NTLoop as a git submodule
+
+1. `cd` to existing project's git repository
+2. `git submodule add git@github.com:nt9/NTLoop.git NTLoop`
+3. `git submodule status`
+4. `git submodule update`
+5. Drag files to your project and DO NOT choose option "Copy items into destination group's folder (if needed)"
+6. Link against QuartzCore framework (Click on your project at navigator panel, choose your build target, go to "Build Phases" tab, then "Link binary with libraries" and add "QuartzCore.framework")
+7. Import `NTLoop.h` header to your project and build!
+
 Sample usage
 ============
 
