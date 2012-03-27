@@ -26,6 +26,9 @@ Simple installation
 Advanced installation
 =====================
 
+Install as a submodule
+----------------------
+
 It's better to install NTLoop as a git submodule
 
 1. `cd` to existing project's git repository
@@ -38,6 +41,7 @@ It's better to install NTLoop as a git submodule
 8. Commit changes.
 
 To update git submodule
+-----------------------
 
 1. `cd` to existing project's git repository
 2. `cd NTLoop`
