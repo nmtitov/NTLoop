@@ -35,6 +35,18 @@ It's better to install NTLoop as a git submodule
 5. Drag files to your project and DO NOT choose option "Copy items into destination group's folder (if needed)"
 6. Link against QuartzCore framework (Click on your project at navigator panel, choose your build target, go to "Build Phases" tab, then "Link binary with libraries" and add "QuartzCore.framework")
 7. Import `NTLoop.h` header to your project and build!
+8. Commit changes.
+
+To update git submodule
+
+1. `cd` to existing project's git repository
+2. `cd NTLoop`
+3. `git checkout master`
+4. `git pull origin master`
+5. `cd ..`
+6. `git add NTLoop`
+7. `git commit -m 'Updated NTLoop to latest version'`
+
 
 Sample usage
 ============
