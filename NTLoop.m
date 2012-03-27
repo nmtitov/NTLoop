@@ -11,7 +11,7 @@
 
 @interface NTLoop()
 
-@property (readwrite, nonatomic) BOOL framesDisplayed;
+@property (readwrite, nonatomic) NSInteger framesDisplayed;
 @property (readwrite, copy, nonatomic) UpdateBlock updateBlock;
 
 @property (strong, nonatomic) CADisplayLink *displayLink;
