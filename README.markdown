@@ -21,6 +21,7 @@ Installation
 Sample usage
 ============
 
+Add to your `AppDelegate.m`
 
     #import "NTLoop.h"
     @interface AppDelegate()
