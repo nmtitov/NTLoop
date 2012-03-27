@@ -80,6 +80,21 @@ Add to your `AppDelegate.m`
     @end
 
 
+Usual pitfalls
+==============
+
+If you are getting error report like this one, you should link agains QuartzCore framework as described in Installation sections
+
+    Undefined symbols for architecture i386:
+        "_CACurrentMediaTime", referenced from:
+            -[NTLoop timeSinceLastUpdate] in NTLoop.o
+                "_OBJC_CLASS_$_CADisplayLink", referenced from:
+                objc-class-ref in NTLoop.o
+                ld: symbol(s) not found for architecture i386
+                clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+
 License
 =======
 
