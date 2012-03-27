@@ -1,3 +1,8 @@
+NTLoop
+======
+
+Simple implementation of abstract game loop using CADisplayLink technique.
+
 Description
 ===========
 
