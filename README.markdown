@@ -1,3 +1,6 @@
+Description
+===========
+
 The ZCLoop class provides part of the standard view controller functionality, it implements loop using CADisplayLink (TODO: add NSTimer for compatibility with old devices). 
 A ZCLoop object usually works in conjunction with a view object to display frames of animation in the view or to update application logic using time interval since last update.
 
@@ -6,3 +9,29 @@ You can set a delegate or configure other properties on the view controller, suc
 
 When active, loop automatically updates application data using time interval since last update.
 The view controller calls its delegate’s zcLoopUpdate: method. If you use delegate then your delegate should update data that does not involve rendering the results to the screen.
+
+Sample usage
+============
+
+
+    #import "ZCLoop.h"
+    @interface AppDelegate()
+
+    @property (strong, nonatomic) ZCLoop *gameLoop;
+
+    @end
+
+
+    @implementation AppDelegate
+
+    @synthesize gameLoop;
+
+    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+    {
+        self.gameLoop = [[ZCLoop alloc] initWithFrameInterval:1.0 usingBlock:^(NSTimeInterval timeSinceLastUpdate) {
+            NSLog(@"Wow this is so simple!");
+        }];
+        return YES;
+    }
+
+    @end
