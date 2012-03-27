@@ -80,7 +80,7 @@ Add to your `AppDelegate.m`
     @end
 
 
-Usual pitfalls
+Common pitfalls
 ==============
 
 If you are getting error report like this one, you should link agains QuartzCore framework as described in Installation sections
