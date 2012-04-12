@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="NTLoop : Good candidate for you next generation FPS game loop." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>NTLoop</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/nt9/NTLoop">Fork Me on GitHub</a>
+
+          <h1 id="project_title">NTLoop</h1>
+          <h2 id="project_tagline">Good candidate for you next generation FPS game loop.</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/nt9/NTLoop/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/nt9/NTLoop/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>NTLoop</h1>
+
+<p>Simple implementation of abstract game loop using CADisplayLink technique.</p>
+
+<h1>Description</h1>
+
+<p>The NTLoop class provides part of the standard view controller functionality, it implements loop using CADisplayLink (TODO: add NSTimer for compatibility with old devices). 
+A NTLoop object usually works in conjunction with a view object to display frames of animation in the view or to update application logic using time interval since last update.</p>
+
+<p>To use this class, allocate and initialize a new NTLoop subclass with frame intrerval (1 means 60 frames per second, 2 means 30 frames per second and so on) using update block object or set its delegate. 
+You can set a delegate or configure other properties on the view controller, such as whether the loop is automatically paused or resumed when the application moves into the background.</p>
+
+<p>When active, loop automatically updates application data using time interval since last update.
+The view controller calls its delegate’s ntLoopUpdate: method. If you use delegate then your delegate should update data that does not involve rendering the results to the screen.</p>
+
+<h1>Simple installation</h1>
+
+<ol>
+<li>Clone repository</li>
+<li>Drag files to your project and choose option "Copy items into destination group's folder (if needed)"</li>
+<li>Link against QuartzCore framework (Click on your project at navigator panel, choose your build target, go to "Build Phases" tab, then "Link binary with libraries" and add "QuartzCore.framework")</li>
+<li>Import <code>NTLoop.h</code> header to your project and build!</li>
+</ol><h1>Advanced installation</h1>
+
+<h2>Install as a submodule</h2>
+
+<p>It's better to install NTLoop as a git submodule</p>
+
+<ol>
+<li>
+<code>cd</code> to existing project's git repository</li>
+<li><code>git submodule add git@github.com:nt9/NTLoop.git NTLoop</code></li>
+<li><code>git submodule status</code></li>
+<li><code>git submodule update</code></li>
+<li>Drag files to your project and DO NOT choose option "Copy items into destination group's folder (if needed)"</li>
+<li>Link against QuartzCore framework (Click on your project at navigator panel, choose your build target, go to "Build Phases" tab, then "Link binary with libraries" and add "QuartzCore.framework")</li>
+<li>Import <code>NTLoop.h</code> header to your project and build!</li>
+<li>Commit changes.</li>
+</ol><h2>To update git submodule</h2>
+
+<ol>
+<li>
+<code>cd</code> to existing project's git repository</li>
+<li><code>cd NTLoop</code></li>
+<li><code>git checkout master</code></li>
+<li><code>git pull origin master</code></li>
+<li><code>cd ..</code></li>
+<li><code>git add NTLoop</code></li>
+<li><code>git commit -m 'Updated NTLoop to latest version'</code></li>
+</ol><h1>Sample usage</h1>
+
+<p>Add to your <code>AppDelegate.m</code></p>
+
+<pre><code>#import "NTLoop.h"
+@interface AppDelegate()
+
+@property (strong, nonatomic) NTLoop *gameLoop;
+
+@end
+
+
+@implementation AppDelegate
+
+@synthesize gameLoop;
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.gameLoop = [[NTLoop alloc] initWithFrameInterval:1.0 usingBlock:^(NSTimeInterval timeSinceLastUpdate) {
+        NSLog(@"Wow this is so simple!");
+    }];
+    return YES;
+}
+
+@end
+</code></pre>
+
+<h1>Common pitfalls</h1>
+
+<p>If you are getting error report like this one, you should link agains QuartzCore framework as described in Installation sections</p>
+
+<pre><code>Undefined symbols for architecture i386:
+    "_CACurrentMediaTime", referenced from:
+        -[NTLoop timeSinceLastUpdate] in NTLoop.o
+            "_OBJC_CLASS_$_CADisplayLink", referenced from:
+            objc-class-ref in NTLoop.o
+            ld: symbol(s) not found for architecture i386
+            clang: error: linker command failed with exit code 1 (use -v to see invocation)
+</code></pre>
+
+<h1>License</h1>
+
+<p>(The MIT License)</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">NTLoop maintained by <a href="https://github.com/nt9">nt9</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
