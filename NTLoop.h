@@ -6,6 +6,7 @@
 //  Copyright (c) 2011 nikita@zencode.ru. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 
 @class NTLoop;
 
