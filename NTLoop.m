@@ -158,7 +158,7 @@
 
 - (void)handleDidBecomeActive {
     if (self.resumeOnDidBecomeActive) {
-        self.paused =NO;
+        self.paused = NO;
     }
 }
 
