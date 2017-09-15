@@ -32,7 +32,7 @@ Install as a submodule
 It's better to install NTLoop as a git submodule
 
 1. `cd` to existing project's git repository
-2. `git submodule add git@github.com:nt9/NTLoop.git NTLoop`
+2. `git submodule add https://github.com/nmtitov/NTLoop.git NTLoop`
 3. `git submodule status`
 4. `git submodule update`
 5. Drag files to your project and DO NOT choose option "Copy items into destination group's folder (if needed)"
