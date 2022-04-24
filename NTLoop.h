@@ -2,8 +2,8 @@
 //  NTLoop.h
 //  NTLoop
 //
-//  Created by Nikita Titov on 11/24/11.
-//  Copyright (c) 2011 nikita@zencode.ru. All rights reserved.
+//  Created by Nikita Titov <nmtitov@ya.ru> on 11/24/11.
+//  Copyright (c) 2011 Nikita Titov. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
