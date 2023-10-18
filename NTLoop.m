@@ -94,7 +94,7 @@
         self.timeSinceLastUpdate = 0;
         
         self.paused = NO;
-        [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
         
         self.pauseOnWillResignActive = YES;
         self.resumeOnDidBecomeActive =YES;
